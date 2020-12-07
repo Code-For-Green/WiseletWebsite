@@ -1,0 +1,27 @@
+{
+  "name": "water-resources-website",
+  "version": "1.0.0",
+  "description": "Website about Earth's water resources and ways to use it wisely.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-For-Green/water-resources-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Code-For-Green/water-resources-website/issues"
+  },
+  "homepage": "https://github.com/Code-For-Green/water-resources-website#readme",
+  "dependencies": {
+    "tailwindcss": "^2.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.14"
+  }
+}
