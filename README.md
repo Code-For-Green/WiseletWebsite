@@ -1,4 +1,5 @@
 # water-resources-website
+https://code-for-green.github.io/water-resources-website/
 Website about Earth's water resources and ways to use it wisely. Using tailwindcss, autoprefixer, postcss.
 
 # Using tailwind 
