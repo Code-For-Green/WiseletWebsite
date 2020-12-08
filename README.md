@@ -16,3 +16,20 @@ The tailwind file is in public/style.css
 # Workflow
 
 After creating SSH key and pulling the repo, create new branch. After you're done working push and pull request.
+
+# Test
+
+```javascript
+const colors = require('tailwindcss/colors')
+
+module.exports = {
+  theme: {
+    colors: {
+      gray: colors.trueGray,
+      indigo: colors.indigo,
+      red: colors.rose,
+      yellow: colors.amber,
+    }
+  }
+}
+```
