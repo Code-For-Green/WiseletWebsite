@@ -28,3 +28,4 @@ module.exports = {
 ```
 This will generate classes like `<bg-regal-blue>` in addition to all of Tailwind's default colors.
 
+git checkout --track origin/%branchname%
