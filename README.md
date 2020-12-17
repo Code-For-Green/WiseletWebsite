@@ -36,6 +36,8 @@ git checkout --track origin/%branchname%
 
 git push --set-upstream origin %branchname%
 
+# Setting up your machine.
+
 ## Installing nvm
 
 To **install** or **update** nvm, you should run scripts below:
