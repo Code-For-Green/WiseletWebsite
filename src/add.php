@@ -1,7 +1,7 @@
 <?php
     error_reporting(0);
     ini_set('display_errors', 0);
-    
+
     $servername = "localhost";
     $username = $_GET["user"];
     $password = $_GET["pass"];
@@ -9,7 +9,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed");
     }
     $flow = $_GET["flow"];
     $date_now = date('Y-m-d H:i:s');
@@ -18,7 +18,7 @@
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error": " . $sql . "<br>" . $conn->error;"
     }
 
     $conn->close();
