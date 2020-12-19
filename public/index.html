@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WiseLet</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-blue-500">
-    <div class="container">
-      <nav class="flex justify-between text-xl">
-        <!-- Navbar brand -->
-        <a href="index.html">
-          <div class="flex items-center py-2">
-            <img src="../assets/WiseLet logo.svg" alt="WiseLet logo">
-            <p class="text-white font-bold">WiseLet</p>
-          </div>
-        </a>
-        <div class="flex">
-          <ul class="flex items-center text-white">
-            <li class="mx-8">Project</li>
-            <li class="mx-8">FAQ</li>
-            <li class="mx-8">Team</li>
-          </ul>
-        </div>
-        <img class="p-4" src="../assets/icons8-usa-48.png" alt="">
-      </nav>
-      <h1 class="text-white mx-auto max-w-sm pt-12 text-2xl font-bold">
-        Basic Website made with <br />tailwindcss, autoprefixer & postCSS
-      </h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>WiseLet</title>
+</head>
+<body  class="bg-gray-50">
+
+<main>
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between bg-blue-500 p-2">
+    <svg class="w-10 h-10 text-white  stroke-current"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <line x1="4" y1="5.5" x2="20" y2="5.5"/>
+      <line x1="4" y1="11.5" x2="20" y2="11.5"/>
+      <line x1="4" y1="17.5" x2="20" y2="17.5"/>
+    </svg>
+    <img class="w-10 h-10" src="/assets/logo.svg" alt=""> 
+    <img class="w-8 h-8" src="/assets/icons8-usa-48.png" alt="english">
+  </nav>  
+  <!-- Showcase Section -->
+  <section class="bg-blue-500 text-center p-4">
+    <h1 class="text-2xl text-white text-center mb-6">Water is priceless</h1>
+    <button class="bg-white w-28 h-8 rounded-2xl shadow-xl font-bold mb-12">Sign in</button>
+  </section>
+  <!-- New Section -->
+  <section class="p-4">
+    <!-- Div From Now On -->
+    <div class="text-center flex flex-col items-center">
+      <h2 class="font-bold text-lg mb-6">Form Now On</h2>
+      <img class="w-16 h-16" src="/assets/water-tap 1.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et nihil pariatur doloribus nemo quia ut!</p>
+      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">More</button>
     </div>
-  </body>
+    <!-- Div FAQ -->
+    <div class="text-center flex flex-col items-center">
+      <h2 class="font-bold text-lg mb-6">FAQ</h2>
+      <img src="/assets/conversation 1.svg" alt="">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint omnis enim expedita, excepturi quia pariatur!</p>
+      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Any questions?</button>
+    </div>
+    <!-- Div Team -->
+    <div class="text-center flex flex-col items-center">
+      <h2 class="font-bold text-lg mb-6">Team</h2>
+      <img src="/assets/profile 1.svg" alt="">
+      <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente ex dolorum eum totam, ratione in?</p>
+      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Meet team</button>
+    </div>
+  </section>
+  <!-- Rate Us Section -->
+  <section class="text-center font-bold text-4xl">Rate us</section>
+  <!-- Footer -->
+</main>
+</body>
 </html>
