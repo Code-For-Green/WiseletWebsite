@@ -9,6 +9,9 @@ Do not change node_modules, src and package.json files.
 
 After creating SSH key and pulling the repo, create new branch. After you're done working push and pull request.
 
+#GitHub Pages - images not working
+Attaching images to website while using GitHub Pages: https://www.elharony.com/images-not-displaying-in-github-pages/
+
 # Using tailwind 
 This is simple guide. All of tailwind classes and guides are available here https://tailwindcss.com/
 
@@ -35,6 +38,13 @@ git checkout --track origin/%branchname%
 ## Pushing specific branch
 
 git push --set-upstream origin %branchname%
+
+## Deleting branches
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
 
 # Setting up your machine.
 
