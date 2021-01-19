@@ -1,3 +1,6 @@
+<?php
+    session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,7 +124,7 @@
   </nav>
   <div class="container">
   <div>
-    <h1 class="text-center font-bold text-3xl text-blue-8 00 p-4">Hello Mateusz! Howdy! <i class="far fa-grin-beam"></i></h1>
+    <h1 class="text-center font-bold text-3xl text-blue-8 00 p-4"><?php echo "Hello ".$_SESSION['name']." "?><i class="far fa-grin-beam"></i></h1>
     <h2 class="mb-36 lg:mb-6 md:mb-12 text-center ">Your today's stats are here!</h2>
   </div>
 <!-- component -->
