@@ -7,6 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>WiseLet</title>
+  <script>
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      $flow = myObj.reduce(function(previousValue, currentValue) {
+        return previousValue + +currentValue.flow;
+      }, 0);
+      setData($flow);
+    }
+  };
+  xmlhttp.open("GET", "api/baseget.php", true);
+  xmlhttp.send();
+
+  function setData(flow)
+  {
+    $waterLiter = flow;
+    document.getElementById("wr-used").innerHTML = $waterLiter + "L";
+    document.getElementById("wr-glass").innerHTML = $waterLiter*0.25;
+    document.getElementById("wr-bottle").innerHTML = $waterLiter*0.70;
+    document.getElementById("wr-money").innerHTML = Math.round($waterLiter*0.0012*100)/100 + "$";
+  }
+  </script>
 </head>
 <body class="bg-gray-100">
 <!-- Navbar Styles -->
@@ -129,7 +152,7 @@
           </div>
           <div class="flex flex-col flex-grow ml-4">
             <div class="text-sm text-gray-500"> Used</div>
-            <div class="font-bold text-lg">1259 L</div>
+            <div class="font-bold text-lg" id="wr-used"></div>
           </div>
         </div>
       </div>
@@ -155,7 +178,7 @@
           </div>
           <div class="flex flex-col flex-grow ml-4">
             <div class="text-sm text-gray-500">Glasses</div>
-            <div class="font-bold text-lg">230</div>
+            <div class="font-bold text-lg" id="wr-glass"></div>
           </div>
         </div>
       </div>
@@ -166,7 +189,7 @@
           </div>
           <div class="flex flex-col flex-grow ml-4">
             <div class="text-sm text-gray-500">Bottles</div>
-            <div class="font-bold text-lg">190</div>
+            <div class="font-bold text-lg" id="wr-bottle"></div>
           </div>
         </div>
       </div>
@@ -177,7 +200,7 @@
           </div>
           <div class="flex flex-col flex-grow ml-4">
             <div class="text-sm text-gray-500">Saved</div>
-            <div class="font-bold text-lg">$ 32k</div>
+            <div class="font-bold text-lg" id="wr-money"></div>
           </div>
         </div>
       </div>
