@@ -7,30 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>WiseLet</title>
-  <script>
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myObj = JSON.parse(this.responseText);
-      $flow = myObj.reduce(function(previousValue, currentValue) {
-        return previousValue + +currentValue.flow;
-      }, 0);
-      setData($flow);
-    }
-  };
-  xmlhttp.open("GET", "api/baseget.php", true);
-  xmlhttp.send();
-
-
-  function setData(flow)
-  {
-    $waterLiter = flow;
-    document.getElementById("wr-used").innerHTML = $waterLiter + "L";
-    document.getElementById("wr-glass").innerHTML = $waterLiter*0.25;
-    document.getElementById("wr-bottle").innerHTML = $waterLiter*0.70;
-    document.getElementById("wr-money").innerHTML = Math.round($waterLiter*0.0012*100)/100 + "$";
-  }
-  </script>
 </head>
 <body class="bg-gray-100">
 <!-- Navbar Styles -->
@@ -208,6 +184,9 @@
     </div>
   </div>
 </div>
+    <div>
+      <canvas id="chart"></canvas>
+    </div>
 <h1 class="text-center mt-28 md:mt-8 font-bold text-2xl p-4">Pros and hints!</h1>
   <div class="bg-white rounded-lg p-3 flex flex-col justify-center items-center md:items-start shadow-lg mb-4">
     <div class="flex flex-row justify-center mr-2">
@@ -251,8 +230,62 @@
        });
      });
    });
-
    </script>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.status === 200) {
+          const obj = JSON.parse(this.responseText);
+          const flow = obj.reduce((previous, {flow}) => previous + +flow, 0);
+          setData(flow);
+        }
+      };
+      xmlhttp.open("GET", "api/baseget.php", true);
+      xmlhttp.send();
+
+
+      function setData(flow) {
+        document.getElementById("wr-used").innerHTML = flow + 'L';
+        document.getElementById("wr-glass").innerHTML = flow * 0.25;
+        document.getElementById("wr-bottle").innerHTML = flow * 0.70;
+        document.getElementById("wr-money").innerHTML = Math.round(flow * 0.0012 * 100) / 100 + '$';
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      var ctx = document.getElementById('chart').getContext('2d');
+      setInterval(() => {
+        var data = [];
+        for (var i = 0; i < 7; i++) {
+          data.push(getRandomInt(0, 50));
+        }
+        window.chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+            labels: ['10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40'],
+            datasets: [{
+              label: 'Zużytych litrów',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: data
+            }]
+          },
+
+          // Configuration options go here
+          options: {}
+        });
+        window.chart.update();
+      }, 5000);
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    </script>
    </main>
    </body>
    </html>
