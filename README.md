@@ -5,6 +5,14 @@ Website about Earth's water resources and ways to use it wisely. Using tailwindc
 
 Do not change node_modules, src and package.json files.
 
+##TODO LIST##
+[x] Database connect.
+[x] Login system.
+[] CSS for incorrect login and password.
+[] Database connection error in user.php.
+[] CSS for database connection error.
+[] Chart in user.php
+
 # Workflow
 
 After creating SSH key and pulling the repo, create new branch. After you're done working push and pull request.
@@ -38,14 +46,6 @@ git checkout --track origin/%branchname%
 ## Pushing specific branch
 
 git push --set-upstream origin %branchname%
-
-##TODO LIST##
-[x] Database connect.
-[x] Login system.
-[] CSS for incorrect login and password.
-[] Database connection error in user.php.
-[] CSS for database connection error.
-[] Chart in user.php
 
 ## Deleting branches
 // delete branch locally
