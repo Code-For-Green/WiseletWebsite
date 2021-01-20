@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if ((isset($_SESSION['islogin'])) && ($_SESSION['islogin']== true)){
+        header('Location: user.php');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +56,11 @@
                     </div>
                     <input type="submit" value="Log In" class="bg-white shadow-2xl rounded-lg text-grey-700 hover:text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">
                 </form>
+                <?php
+                    if (isset($_SESSION['error'])){
+                        echo $_SESSION['error'];
+                    }
+                ?>
             </div>
         </div>
         <!-- Image Section -->
