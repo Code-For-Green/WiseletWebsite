@@ -13,6 +13,7 @@ Do not change node_modules, src and package.json files.
 - [ ] CSS for database connection error.
 - [ ] Chart in user.php.
 - [ ] Error page.
+- [ ] General HTML code refactorization.
 
 # Workflow
 
