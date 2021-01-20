@@ -39,6 +39,14 @@ git checkout --track origin/%branchname%
 
 git push --set-upstream origin %branchname%
 
+##TODO LIST##
+[x] Database connect.
+[x] Login system.
+[] CSS for incorrect login and password.
+[] Database connection error in user.php.
+[] CSS for database connection error.
+[] Chart in user.php
+
 ## Deleting branches
 // delete branch locally
 
