@@ -5,13 +5,13 @@ Website about Earth's water resources and ways to use it wisely. Using tailwindc
 
 Do not change node_modules, src and package.json files.
 
-##TODO LIST##
+##TODO LIST
 [x] Database connect.
 [x] Login system.
 [] CSS for incorrect login and password.
 [] Database connection error in user.php.
 [] CSS for database connection error.
-[] Chart in user.php
+[] Chart in user.php.
 
 # Workflow
 
