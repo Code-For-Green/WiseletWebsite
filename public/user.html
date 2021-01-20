@@ -254,29 +254,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
       var ctx = document.getElementById('chart').getContext('2d');
+      var chartConfig = {
+        type: 'line',
+        data: {
+          labels: ['10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40'],
+          datasets: [{
+            label: 'Zużytych litrów',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 1, 2, 3, 4, 5, 6]
+          }]
+        },
+        options: {}
+      };
+      window.chart = new Chart(ctx, chartConfig);
       setInterval(() => {
         var data = [];
         for (var i = 0; i < 7; i++) {
           data.push(getRandomInt(0, 50));
         }
-        window.chart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
-
-          // The data for our dataset
-          data: {
-            labels: ['10:10', '10:15', '10:20', '10:25', '10:30', '10:35', '10:40'],
-            datasets: [{
-              label: 'Zużytych litrów',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: data
-            }]
-          },
-
-          // Configuration options go here
-          options: {}
-        });
+        chartConfig.data.datasets[0].data = data;
         window.chart.update();
       }, 5000);
 
