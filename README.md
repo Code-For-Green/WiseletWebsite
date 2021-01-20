@@ -12,6 +12,7 @@ Do not change node_modules, src and package.json files.
 - [ ] Database connection error in user.php.
 - [ ] CSS for database connection error.
 - [ ] Chart in user.php.
+- [ ] Error page.
 
 # Workflow
 
