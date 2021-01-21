@@ -14,7 +14,7 @@ Do not change node_modules, src and package.json files.
 - [ ] Chart in user.php.
 - [ ] Error page.
 - [ ] General HTML code refactorization.
-
+- [ ] Find a rope and a tree.
 # Workflow
 
 After creating SSH key and pulling the repo, create new branch. After you're done working push and pull request.
