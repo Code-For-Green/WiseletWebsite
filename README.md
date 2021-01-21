@@ -1,6 +1,6 @@
 # water-resources-website
-Wersja robocza -> https://code-for-green.github.io/water-resources-website/public/index.html
-Wersja beta -> http://codeforgreen.zspwrzesnia.pl/woda
+> https://code-for-green.github.io/water-resources-website/public/index.html 
+> Wersja beta -> http://codeforgreen.zspwrzesnia.pl/woda
 
 Website about Earth's water resources and ways to use it wisely. Using tailwindcss, autoprefixer, postcss.
 
