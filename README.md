@@ -9,9 +9,9 @@ Do not change node_modules, src and package.json files.
 - [x] Database connect.
 - [x] Login system.
 - [ ] CSS for incorrect login and password.
-- [ ] Database connection error in user.php.
+- [x] Database connection error in user.php.
 - [ ] CSS for database connection error.
-- [ ] Chart in user.php.
+- [x] Chart in user.php.
 - [ ] Error page.
 - [ ] General HTML code refactorization.
 - [ ] Find a rope and a tree.
