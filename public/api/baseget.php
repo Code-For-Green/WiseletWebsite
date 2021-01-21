@@ -3,11 +3,9 @@
     error_reporting(0);
     ini_set('display_errors', 0);
 
-    $servername = "localhost";
-    $username = "webpage";
-    $password = "zaq1@WSX";
-    $dbname = "$249391552_0000017";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    require_once "../db_connect.php";
+
+    $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
     if ($conn->connect_error) {
         $_SESSION['connect_error'] = "<span>An error was encountered trying to connect to the database.</span>";
