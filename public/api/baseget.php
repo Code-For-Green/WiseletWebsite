@@ -1,4 +1,5 @@
 <?php
+    session_start();
     error_reporting(0);
     ini_set('display_errors', 0);
 
@@ -9,7 +10,9 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
+        $_SESSION['connect_error'] = "<span>An error was encountered trying to connect to the database.</span>";
         die("Connection failed");
+        exit();
     }
     $sql = "SELECT * FROM dane";
     $result = $conn->query($sql);

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['islogin'])){
+        header('Location: index.html');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,17 +97,25 @@
             href="#"
             class="lg:inline-flex lg:mx-6 lg:w-auto w-full px-2 py-2 rounded text-white items-center justify-center"
           >
-          <?xml version="1.0" encoding="UTF-8"?>
             <img src="../Assets/icons8-poland-48.png" alt="Polish">
           </a>
           </div>
+          <a href="logout.php">
+              <span>Logout</span>
+          </a>
+
       </div>
     </div>
   </nav>
   <div class="container">
   <div>
-    <h1 class="text-center font-bold text-3xl text-blue-8 00 p-4">Hello Mateusz! Howdy! <i class="far fa-grin-beam"></i></h1>
+    <h1 class="text-center font-bold text-3xl text-blue-8 00 p-4"><?php echo "Hello ".$_SESSION['name']." "?><i class="far fa-grin-beam"></i></h1>
     <h2 class="mb-36 lg:mb-6 md:mb-12 text-center ">Your today's stats are here!</h2>
+      <?php
+      if (isset($_SESSION['connect_error'])){
+          echo $_SESSION['connect_error'];
+      }
+      ?>
   </div>
 <!-- component -->
 <div class="flex items-center h-36 text-gray-800">
