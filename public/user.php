@@ -249,65 +249,47 @@
    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
-      var database;
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status === 200) {
-          database = JSON.parse(this.responseText);
-          setLineData();
-          setData();
-        }
-      };
-      refreshDataBase();
-      var ctx = document.getElementById('chart').getContext('2d');
-        var chartConfig = {
+      const chartConfig = {
           type: 'line',
           data: {
-            labels: [],
-            datasets: [{
-              label: 'Zużytych litrów',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: []
-            }]
+              labels: [],
+              datasets: [{
+                  label: 'Zużytych litrów',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: []
+              }]
           },
           options: {}
-        };
-        setInterval(() => {
-            refreshDataBase();
-        }, 5000);
-        window.chart = new Chart(ctx, chartConfig);
+      };
 
-      function refreshDataBase()
-      {
-        xmlhttp.open("GET", "api/baseget.php", true);
-        xmlhttp.send();
+      function refreshData() {
+          fetch("api/baseget.php")
+              .then(response => response.json())
+              .then(json => {
+                  setChartData(json);
+                  setData(json);
+              })
+              .catch(console.error)
       }
 
-      function setData() 
-      {
-        const flow = database.reduce((previous, {flow}) => previous + +flow, 0);
-        document.getElementById("wr-used").innerHTML = flow + 'L';
-        document.getElementById("wr-glass").innerHTML = flow * 0.25;
-        document.getElementById("wr-bottle").innerHTML = flow * 0.70;
-        document.getElementById("wr-money").innerHTML = Math.round(flow * 0.0012 * 100) / 100 + '$';
+      function setData(response) {
+          const flow = response.reduce((previous, {Flow}) => previous + +Flow, 0);
+          document.getElementById("wr-used").innerHTML = flow + ' l';
+          document.getElementById("wr-glass").innerHTML = flow * 0.25;
+          document.getElementById("wr-bottle").innerHTML = flow * 0.70;
+          document.getElementById("wr-money").innerHTML = Math.round(flow * 0.0012 * 100) / 100 + ' $';
       }
 
-      function setLineData()
-      {
-        i = database.length;
-        console.log(i);
-        dateLabel = new Array(i); 
-        flowData = new Array(i); 
-        while (i--) {
-          dateLabel[i] = database[i].dateTime;
-          flowData[i] = +database[i].flow;
-        }
-        chartConfig.data.datasets[0].data = flowData;
-        chartConfig.data.labels = dateLabel
+      function setChartData(response) {
+        chartConfig.data.datasets[0].data = response.map(obj => +obj.Flow);
+        chartConfig.data.labels = response.map(obj => obj.DateTime);
         window.chart.update();
       }
 
+      window.chart = new Chart(document.getElementById('chart').getContext('2d'), chartConfig);
+      refreshData();
+      setInterval(() => refreshData(), 5000);
     </script>
    </main>
    </body>
