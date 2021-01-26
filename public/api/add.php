@@ -13,12 +13,12 @@
     unset($_SESSION['connect_error']);
     $flow = $_GET["flow"];
     $date_now = date('Y-m-d H:i:s');
-    $sql = "INSERT INTO dane(DataTime, Flow) VALUES('$date_now', '$flow')";
+    $sql = "INSERT INTO dane(DateTime, Flow) VALUES('$date_now', '$flow')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
-        echo "Error": " . $sql . "<br>" . $conn->error;";
+        echo $conn->error;
     }
 
     $conn->close();
