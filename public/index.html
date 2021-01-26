@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <!-- Media Query Breakpoints for Navbar & margins -->
   <style>
+    /* Responsive Design */
     @media (min-width: 1024px) {
       .top-navbar {
         display: inline-flex !important;
@@ -23,43 +24,41 @@
         }
     }
     @media (max-width: 1024px) {
-      .hider {
+      .hideOnSmall {
         display: none;
       }
     }
-    .marginClass {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .marginClassInverted {
-      margin-left: auto;
-      margin-right: auto;
-    }
+
+    /* Center Main Section */
     .center {
       width: 750px;
     }
+
+    /* HR Styles */
     hr {
       opacity: 0.9;
       width: 500px;
       border-top: 0.5px solid grey;
     }
-    .widthClass {
-      width: 80vw;
-    }
+
+    /* Rate Us Section Stars */
     .rating {
       unicode-bidi: bidi-override;
       direction: rtl;
       text-align: center;
     }
+
     .rating > a {
       display: inline-block;
       position: relative;
       width: 1.1em;
     }
+
     .rating > a:hover,
     .rating > a:hover ~ a {
       color: transparent;
     } 
+
     .rating > a:hover:before,
     .rating > a:hover ~ a:before {
       content: "\2605";
@@ -67,15 +66,18 @@
       left: 0; 
       color: gold;
     }
+
+    /* Footer Rounded Styles */
     .radiusClass {
       border-top: white 0.5 solid; 
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
+
   </style>
   <main>
 <!-- Navbar -->
-  <nav class="flex items-center bg-blue-500 p-3 flex-wrap px-10">
+  <nav class="flex items-center bg-main-color p-3 flex-wrap px-10">
 <!-- Navbar Brand -->
     <a href="#" class="p-2 mr-4 inline-flex items-center">
       <img width="65" height="64" src="../Assets/logo.svg" alt="">
@@ -129,7 +131,7 @@
 
 
   <!-- Showcase Section -->
-  <section class="bg-blue-500 text-center flex-col justify-center backgr">
+  <section class="bg-main-color text-center flex-col justify-center backgr">
       <h1 class="text-2xl text-white text-center mb-6 relative">Water is priceless</h1>
     <a href="login.php"><button class="bg-white w-28 h-8 rounded-2xl shadow-xl mt-4 font-bold relative">Sign in</button></a>
   </section>
@@ -139,7 +141,7 @@
     <div class="container">
       <!-- Desktop Design -->
       <!-- Block #1 -->
-      <div class="hider">
+      <div class="hideOnSmall">
         <div class="flex flex-row justify-center items-center">
           <img class="mr-10" width="108" height="108" src="../Assets/water-tap 1.svg" alt="">
           <div class="text-left ml-10">
@@ -147,16 +149,16 @@
             <p class="text-lg center">You can check how much water your household uses! Check out Our user interface guide and ask questions!</p>
           </div>
           <div class="text-right mt-48">
-            <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
+            <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
           </div>
         </div>
         <hr class="mx-auto my-8"> 
       </div>
        <!-- Block #2 -->
-      <div class="hider">
+      <div class="hideOnSmall">
         <div class="flex flex-row justify-center items-center">
           <div class="text-right mt-48">
-            <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
+            <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
           </div>
           <div class="text-right mr-10">
             <h2 class="font-bold text-2xl mb-6">FAQ</h2>
@@ -167,7 +169,7 @@
         <hr class="mx-auto my-8">
       </div>
        <!-- Block #2 -->
-      <div class="hider">
+      <div class="hideOnSmall">
         <div class="flex flex-row justify-center items-center">
           <img class="mr-10" width="108" height="108" src="../Assets/profile.svg" alt="">
           <div class="text-left ml-10">
@@ -175,7 +177,7 @@
             <p class="text-lg center">If you want to learn more about Our efforts, how the work is done and see Our faces, that's the link for You!</p>
           </div>
           <div class="flex justify-left text-right mt-48">
-            <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
+            <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold my-8 marginClass">More</button>
           </div>
         </div>
         <hr class="mx-auto my-8">
@@ -187,21 +189,21 @@
       <h2 class="font-bold text-lg mb-6">From Now On</h2>
       <img src="../Assets/water-tap 1.svg" width="62" height="62"  alt="">    
       <p>You can check how much water your household uses! Check out Our user interface guide and ask questions!</p>
-      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">More</button>
+      <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">More</button>
     </div>
     <!-- FAQ Mobile -->
     <div class="text-center flex flex-col items-center lg:hidden block">
       <h2 class="font-bold text-lg mb-6">FAQ</h2>
       <img src="../Assets/conversation 1.svg" width="73" height="73" alt="">
       <p>Check out the most frequently asked questions! Maybe you will find your answer in here!</p>
-      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Any questions?</button>
+      <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Any questions?</button>
     </div>
     <!-- Team Mobile -->
     <div class="text-center flex flex-col items-center lg:hidden block">
       <h2 class="font-bold text-lg mb-6">Team</h2>
       <img src="../Assets/profile.svg" height="81" width="81" alt="">
       <p class="">If you want to learn more about Our efforts, how the work is done and see Our faces, that's the link for You!</p>
-      <button class="bg-blue-500 w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Meet team</button>
+      <button class="bg-main-color w-36 p-2 text-gray-900 rounded-2xl shadow-xl font-bold mb-8 mt-8">Meet team</button>
     </div>
   </section>
   <!-- Rate Us Section -->
@@ -217,7 +219,7 @@
   </section>
   <!-- Footer -->
   <section class="mt-14">
-    <div class="bg-blue-500 radiusClass h-14 text-white font-semibold flex items-center justify-center">
+    <div class="bg-main-color radiusClass h-14 text-white font-semibold flex items-center justify-center">
       <p class="uppercase"><i class="far fa-copyright mr-2"></i>made with love by starwatch  </p>
     </div>
   </section>
