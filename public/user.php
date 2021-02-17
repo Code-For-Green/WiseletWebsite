@@ -277,7 +277,7 @@
           const flow = response.reduce((previous, {Flow}) => previous + +Flow, 0);
           document.getElementById("wr-used").innerHTML = flow + ' l';
           document.getElementById("wr-glass").innerHTML = flow * 0.25;
-          document.getElementById("wr-bottle").innerHTML = flow * 0.70;
+          document.getElementById("wr-bottle").innerHTML = Math.round(flow * 0.70);
           document.getElementById("wr-money").innerHTML = Math.round(flow * 0.0012 * 100) / 100 + ' $';
       }
 
